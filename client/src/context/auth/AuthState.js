@@ -51,7 +51,7 @@ const AuthState = props => {
       }
 
       try {
-        const res = await axios.post('api/users', formData, config);
+        const res = await axios.post('/api/users', formData, config);
 
         dispatch({
           type: REGISTER_SUCCESS, 
@@ -72,7 +72,7 @@ const AuthState = props => {
     const login = async formData => {
       const config = {
         headers: {
-          'Content-Type': 'application/json'
+          "Content-Type": "application/json"
         }
       }
 

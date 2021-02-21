@@ -2,7 +2,7 @@ import React, { useState, useContext, useEffect } from 'react';
 import AuthContext from '../../context/auth/authContext';
 import AlertContext from '../../context/alert/alertContext';
 
-const Login = (props) => {
+const Login = props => {
   const alertContext = useContext(AlertContext);
   const authContext = useContext(AuthContext);
 
@@ -39,7 +39,7 @@ const Login = (props) => {
             email,
             password
           });
-        };
+        }
     };
 
     return (
@@ -47,16 +47,32 @@ const Login = (props) => {
         <h1>
             Account <span className='text-primary'>Login</span>
         </h1>
-        <form>
+        <form onSubmit={onSubmit}>
           <div className='form-group'>
             <label htmlFor='email'>Email Address</label>
-            <input type="email" name='email' value={email} onChange={onChange} required />
+            <input 
+             id='email'
+             type='email' 
+             name='email' 
+             value={email} 
+             onChange={onChange} 
+             required />
           </div>
           <div className='form-group'>
             <label htmlFor='password'>Password</label>
-            <input type="password" name='password' value={password} onChange={onChange} required />
+            <input 
+              id='password'
+              type='password' 
+              name='password' 
+              value={password} 
+              onChange={onChange} 
+              required />
           </div>
-           <input type="submit" value="Login" className="btn btn-primary btn-block" />
+           <input 
+            type="submit" 
+            value="Login" 
+            className="btn btn-primary btn-block" 
+            />
         </form>
       </div>
   );
